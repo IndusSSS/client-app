@@ -2,19 +2,24 @@
     package="com.smartsecurity.clientapp">
 
     <application
-        android:allowBackup="true"
+        android:name="com.smartsecurity.clientapp.SmartSecApp"
         android:label="client-app"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:theme="@style/Theme.Material3.DayNight.NoActionBar">
-        <activity android:name=".MainActivity"
+        <activity android:name="com.smartsecurity.clientapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name="com.smartsecurity.clientapp.service.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
-
 </manifest>
